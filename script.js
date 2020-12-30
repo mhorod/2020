@@ -43,7 +43,7 @@ function newYearDate() {
 
 function newYearCountdown(deadline) {
   let seconds = timeLeft(deadline).total_seconds;
-  let tick = 1000 / 30;
+  let tick = 1000;
   var interval = setInterval(() => {
     seconds -= tick / 1000;
     if (seconds <= 0) {
@@ -67,19 +67,17 @@ function rotate(cx, cy, x, y, angle) {
 }
 
 function f(a, x) {
-  let s = -Math.abs(x) / x
   x = Math.abs(x)
-  return s * (a * x) / (x + a / 2)
+  m = 5
+  let off = (10 * a - m * m) / m;
+  return (a * x) / (x + off)
 }
 
 function calculatePosition(seconds, origin, distance) {
   const secondsInYear = 3600 * 24 * 365;
   const anglePerSecond = 360 / secondsInYear;
   let angle = seconds * anglePerSecond;
-  if (seconds > -10) { angle = seconds; }
-  else {
-    angle = -10 - f(10, seconds + 10)
-  }
+  angle = -f(30, seconds)
   return rotate(origin.x, origin.y, origin.x, origin.y + distance, angle);
 }
 
@@ -377,6 +375,3 @@ canvas.addEventListener('mouseup', function (e) {
 });
 
 document.onload = newYearCountdown(newYearDate())
-//let d = new Date();
-//d.setSeconds(d.getSeconds() + 30)
-//document.onload = newYearCountdown(d)
