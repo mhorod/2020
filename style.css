@@ -1,0 +1,117 @@
+html, body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  background-color: #111;
+  color: #fff;
+  font-family: 'Inconsolata', monospace;
+}
+
+main:after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  border-left: 1px dashed #eee;
+  opacity: 0.4;
+  transform: translate(calc(50% - 1px));
+}
+
+#earth {
+  position: absolute;
+  font-size: 50px;
+  transform: translateX(-25px);
+  z-index: 999;
+}
+
+#earth>ion-icon {
+  position: absolute;
+}
+
+.earth-water {
+  color: #4ccbe5;
+}
+
+.earth-land {
+  color: #bdf889;
+}
+
+#counter {
+  font-size: 30px;
+}
+
+#sun {
+  position: absolute;
+  top: -50px;
+  left: 50%;
+  transform: translateX(-50px);
+  font-size: 100px;
+}
+
+#sun>ion-icon {
+  position: absolute;
+}
+
+#sun>ion-icon:first-child {
+  color: #111;
+  transform: scale(1.4);
+}
+
+#earth-ghost {
+  font-size: 50px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-25px);
+  top: 50%;
+}
+
+#ghost-water {
+  position: absolute;
+  color: #111;
+  opacity: 1;
+  transform: scale(1.5);
+}
+
+#ghost-land {
+  color: #eee;
+  opacity: 0.5;
+  position: absolute;
+}
+
+#counter {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  text-align: center;
+  margin-top: 100px;
+  background-color: #111;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-size: 20px;
+}
+
+#canvas {
+  position: absolute;
+  z-index: 998;
+}
+
+#oldyear, #newyear {
+  font-family: 'Permanent Marker', cursive;
+  position: absolute;
+  top: 30%;
+  opacity: 0.5;
+  font-size: 25px;
+}
+
+#oldyear {
+  left: 20%;
+}
+
+#newyear {
+  right: 20%;
+}
